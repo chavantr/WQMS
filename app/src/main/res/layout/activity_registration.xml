@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".RegistrationActivity">
 
 
     <android.support.design.widget.TextInputLayout
@@ -52,30 +52,83 @@
     </android.support.design.widget.TextInputLayout>
 
 
-    <Button
-            android:id="@+id/btnSignIn"
+    <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/sign_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilPassword"/>
+            app:layout_constraintTop_toBottomOf="@id/tilPassword">
+
+        <android.support.design.widget.TextInputEditText
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_email"
+        />
 
 
-    <Button
-            android:id="@+id/btnSignUp"
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/sign_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnSignIn"/>
+            app:layout_constraintTop_toBottomOf="@id/tilName">
+
+        <android.support.design.widget.TextInputEditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilEmail">
+
+        <android.support.design.widget.TextInputEditText
+                android:id="@+id/txtNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_phone"
+                android:inputType="textEmailAddress"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginEnd="16dp"
+              android:layout_marginStart="16dp" android:text="@string/select_location"
+              android:layout_marginTop="16dp" android:id="@+id/lblLocation"
+              app:layout_constraintTop_toBottomOf="@id/tilNumber" android:padding="15dp"/>
+
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/btnSignUp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" android:text="@string/sign_up"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/lblLocation"/>
 
 
 </android.support.constraint.ConstraintLayout>
