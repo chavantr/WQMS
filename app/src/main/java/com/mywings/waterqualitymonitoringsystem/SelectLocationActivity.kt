@@ -14,17 +14,15 @@ import kotlinx.android.synthetic.main.activity_select_location.*
 
 class SelectLocationActivity : AppCompatActivity(), OnGetLocationListener, OnLocationQListener {
 
-
-    private lateinit var httpConnectionUtil: HttpConnectionUtil
     private lateinit var jointAdapter: JointAdapter
     private lateinit var progressDialogUtil: ProgressDialogUtil
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_location)
-        httpConnectionUtil = HttpConnectionUtil()
         lstLocation.layoutManager = LinearLayoutManager(this)
         progressDialogUtil = ProgressDialogUtil(this)
+        init()
     }
 
     private fun init() {
