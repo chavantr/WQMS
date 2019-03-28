@@ -1,11 +1,12 @@
 package com.mywings.waterqualitymonitoringsystem
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.mywings.waterqualitymonitoringsystem.model.Location
+import com.mywings.waterqualitymonitoringsystem.model.UserInfoHolder
 import com.mywings.waterqualitymonitoringsystem.process.GetLocationAsync
-import com.mywings.waterqualitymonitoringsystem.process.HttpConnectionUtil
 import com.mywings.waterqualitymonitoringsystem.process.OnGetLocationListener
 import com.mywings.waterqualitymonitoringsystem.process.ProgressDialogUtil
 import generalknowledge.mywings.com.smartdustbinsystem.joint.JointAdapter
@@ -39,7 +40,10 @@ class SelectLocationActivity : AppCompatActivity(), OnGetLocationListener, OnLoc
         }
     }
 
-    override fun onVehicleSelected(vehicle: Location) {
-
+    override fun onVehicleSelected(location: Location) {
+        UserInfoHolder.getInstance().location = location
+        val intent = Intent()
+        setResult(RESULT_OK, intent)
+        finish()
     }
 }

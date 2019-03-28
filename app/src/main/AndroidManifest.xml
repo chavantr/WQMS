@@ -9,6 +9,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ProfileActivity">
+        </activity>
+        <activity
+                android:name=".DashboardActivity"
+                android:label="@string/title_activity_dashboard"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".SelectLocationActivity">
         </activity>
         <activity android:name=".RegistrationActivity">
