@@ -27,6 +27,11 @@ class MainActivity : AppCompatActivity(), OnLoginListener {
                 Toast.makeText(this, "Enter username and password", Toast.LENGTH_LONG).show()
             }
         }
+
+        btnSignUp.setOnClickListener {
+            val intent = Intent(this@MainActivity, RegistrationActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun validate(): Boolean = txtUserName.text!!.isNotEmpty() && txtPassword.text!!.isNotEmpty()

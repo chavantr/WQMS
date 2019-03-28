@@ -9,4 +9,22 @@
         tools:showIn="@layout/app_bar_dashboard"
         tools:context=".DashboardActivity">
 
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="@string/select_location"
+              android:layout_marginTop="16dp" android:id="@+id/lblLocation"
+              android:padding="15dp" app:layout_constraintTop_toTopOf="parent"
+              android:gravity="center_vertical" android:textColor="@color/colorAccent"
+              android:drawableEnd="@drawable/ic_location_city_black_24dp"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              app:layout_constraintTop_toBottomOf="@id/lblLocation" android:layout_marginTop="16dp"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+              android:textColor="@color/colorAccent" android:padding="15dp"
+              android:text="@string/sensor_info" android:drawableEnd="@drawable/ic_info_black_24dp"
+              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+
+
 </android.support.constraint.ConstraintLayout>

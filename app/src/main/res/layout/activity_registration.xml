@@ -120,11 +120,13 @@
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginEnd="16dp"
               android:layout_marginStart="16dp" android:text="@string/select_location"
               android:layout_marginTop="16dp" android:id="@+id/lblLocation"
+              android:drawableEnd="@drawable/ic_location_city_black_24dp"
               app:layout_constraintTop_toBottomOf="@id/tilNumber" android:padding="15dp"/>
 
     <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/btnSignUp"
             android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp" android:text="@string/sign_up"
+            android:gravity="center_vertical"
+            android:layout_marginStart="16dp" android:text="@string/sign_up_n"
             android:layout_marginTop="24dp"
             app:layout_constraintTop_toBottomOf="@id/lblLocation"/>
 
