@@ -37,6 +37,7 @@ class SelectLocationActivity : AppCompatActivity(), OnGetLocationListener, OnLoc
         if (result!!.isNotEmpty()) {
             jointAdapter = JointAdapter(result)
             jointAdapter.setOnVehicleSelectedListener(this)
+            lstLocation.adapter = jointAdapter
         }
     }
 

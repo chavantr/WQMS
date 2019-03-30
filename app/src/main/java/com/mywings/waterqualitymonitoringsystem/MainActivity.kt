@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity(), OnLoginListener {
         val loginAsync = LoginAsync()
         val jRequest = JSONObject()
         val param = JSONObject()
+        param.put("Username", txtUserName.text)
+        param.put("Password", txtPassword.text)
         jRequest.put("request", param)
         loginAsync.setOnLoinListener(this, jRequest)
     }
