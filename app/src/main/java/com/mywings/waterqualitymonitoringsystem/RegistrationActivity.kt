@@ -63,10 +63,13 @@ class RegistrationActivity : AppCompatActivity(), OnRegistrationListener {
 
 
     override fun onRegistration(result: String?) {
-        progressDialogUtil.hide()
-        if (result!!.isNotEmpty()) {
-            Toast.makeText(this, "Successfully registered.", Toast.LENGTH_LONG).show()
-            finish()
+        try {
+            progressDialogUtil.hide()
+            if (result!!.isNotEmpty()) {
+                Toast.makeText(this, "Successfully registered.", Toast.LENGTH_LONG).show()
+                finish()
+            }
+        } catch (e: Exception) {
         }
     }
 

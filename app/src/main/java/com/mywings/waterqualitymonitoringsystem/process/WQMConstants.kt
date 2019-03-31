@@ -7,5 +7,6 @@ object WQMConstants {
     const val LOGIN = "WQM_Login"
     const val REGISTRATION = "WQM_Register"
     const val GET_SENSOR_INFO = "GetSensors"
+    const val WQM_UPDATE_PROFILE = "WQM_UpdateProfile"
 
 }

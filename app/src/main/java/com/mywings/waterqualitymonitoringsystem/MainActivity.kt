@@ -48,13 +48,16 @@ class MainActivity : AppCompatActivity(), OnLoginListener {
     }
 
     override fun onLoginSuccess(user: User?) {
-        progressDialogUtil.hide()
-        if (null != user) {
-            UserInfoHolder.getInstance().user = user
-            val intent = Intent(this@MainActivity, DashboardActivity::class.java)
-            startActivity(intent)
-        } else {
-            Toast.makeText(this, "Enter correct username and password", Toast.LENGTH_LONG).show()
+        try {
+            progressDialogUtil.hide()
+            if (null != user) {
+                UserInfoHolder.getInstance().user = user
+                val intent = Intent(this@MainActivity, DashboardActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Enter correct username and password", Toast.LENGTH_LONG).show()
+            }
+        } catch (e: Exception) {
         }
 
     }

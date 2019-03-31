@@ -20,11 +20,33 @@
               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
 
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:id="@+id/lblInfo"
               app:layout_constraintTop_toBottomOf="@id/lblLocation" android:layout_marginTop="16dp"
               app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
               android:textColor="@color/colorAccent" android:padding="15dp"
               android:text="@string/sensor_info" android:drawableEnd="@drawable/ic_info_black_24dp"
               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
 
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/lblPh"
+              android:padding="15dp" app:layout_constraintTop_toBottomOf="@id/lblInfo" android:layout_marginTop="16dp"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+              android:textColor="@color/colorAccent"
+              android:text="@string/ph_level_is" android:gravity="center_vertical"
+              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/lblTemperature"
+              android:padding="15dp" app:layout_constraintTop_toBottomOf="@id/lblPh" android:layout_marginTop="16dp"
+              android:textColor="@color/colorAccent"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+              android:text="@string/temperature_is" android:gravity="center_vertical"
+              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/lblInstruction"
+              android:padding="15dp" app:layout_constraintTop_toBottomOf="@id/lblTemperature" android:layout_marginTop="16dp"
+              android:textColor="@color/colorAccent"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+              android:text="@string/temperature_is" android:gravity="center_vertical"
+              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
 
 </android.support.constraint.ConstraintLayout>

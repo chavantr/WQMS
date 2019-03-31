@@ -20,6 +20,7 @@ class LoginAsync : AsyncTask<JSONObject, Void, User?>() {
             user.password = jResponse.getString("Password")
             user.lid = jResponse.getInt("LId")
             user.number = jResponse.getString("Number")
+            user.lname = jResponse.getString("LName")
             user
         }
     }

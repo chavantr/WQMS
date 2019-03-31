@@ -7,5 +7,6 @@ data class User(
     var username: String = "",
     var password: String = "",
     var lid: Int = 0,
-    var number: String = ""
+    var number: String = "",
+    var lname: String = ""
 )
