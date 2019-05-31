@@ -9,8 +9,8 @@ class LoginAsync : AsyncTask<JSONObject, Void, User?>() {
     private lateinit var onLoginListener: OnLoginListener
 
     override fun doInBackground(vararg param: JSONObject?): User? {
-        val response = HttpConnectionUtil().requestPost(WQMConstants.URL + WQMConstants.LOGIN, param[0])
-        return run {
+        var response: String? = HttpConnectionUtil().requestPost(WQMConstants.URL + WQMConstants.LOGIN, param[0])
+        return if (response.isNullOrEmpty()) return null else {
             var user = User()
             val jResponse = JSONObject(response)
             user.id = jResponse.getInt("Id")
