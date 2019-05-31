@@ -21,4 +21,7 @@
     <string name="sign_up_n">Sign up</string>
     <string name="ph_level_is">PH Level is</string>
     <string name="temperature_is">Temperature is</string>
+    <string name="turbo">Turbo is</string>
+    <string name="soil_is">Soil is</string>
+    <string name="next_is">Next date is</string>
 </resources>

@@ -14,10 +14,9 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.mywings.waterqualitymonitoringsystem.model.Sensor
+import com.mywings.waterqualitymonitoringsystem.model.States
 import com.mywings.waterqualitymonitoringsystem.model.UserInfoHolder
-import com.mywings.waterqualitymonitoringsystem.process.GetSensorAsync
-import com.mywings.waterqualitymonitoringsystem.process.OnGetSensorListener
-import com.mywings.waterqualitymonitoringsystem.process.ProgressDialogUtil
+import com.mywings.waterqualitymonitoringsystem.process.*
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.app_bar_dashboard.*
 import kotlinx.android.synthetic.main.content_dashboard.*
@@ -25,7 +24,8 @@ import kotlinx.android.synthetic.main.nav_header_dashboard.view.*
 import java.text.DecimalFormat
 
 
-class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, OnGetSensorListener {
+class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, OnGetSensorListener,
+    OnGetStateListener {
 
 
     private lateinit var progressDialogUtil: ProgressDialogUtil
@@ -104,12 +104,15 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             val newV = decimalFormat.format(x.toDouble())
             lblPh.text = "Ph level is : $newV"
             lblTemperature.text = "Temperature is : ${decimalFormat.format(result[0].temperature.toDouble())}"
+            lblTurbo.text = "Turbo is : ${result[0].turbo}"
+            lblSoil.text = "Soil is : ${result[0].soil}"
             if (newV.toDouble() in 6.5..8.5) {
                 lblInstruction.text = "Water quality is : Good"
             } else {
                 lblInstruction.text = "Water quality is : Poor"
                 showNotification()
             }
+            initNext()
         } else {
             lblPh.text = "Ph level is : NA"
             lblTemperature.text = "Temperature is : NA"
@@ -134,6 +137,18 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             .setContentInfo("Info")
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(1, b.build())
+    }
+
+    private fun initNext() {
+        val getLatestState = GetLatestState()
+        getLatestState.setOnStateListener(this, "")
+    }
+
+
+    override fun onStateSuccess(state: States?) {
+        if (null != state) {
+            lblNext.text = "Next date is : ${state.next}"
+        }
     }
 
     companion object {

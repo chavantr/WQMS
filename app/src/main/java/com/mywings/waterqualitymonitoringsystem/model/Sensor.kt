@@ -4,5 +4,8 @@ data class Sensor(
     var id: Int = 0,
     var name: String = "",
     var ph: String = "",
-    var temperature: String = ""
+    var temperature: String = "",
+    var turbo: String = "",
+    var soil: String = ""
+
 )

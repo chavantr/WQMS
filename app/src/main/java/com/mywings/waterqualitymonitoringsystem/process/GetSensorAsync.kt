@@ -20,6 +20,8 @@ class GetSensorAsync : AsyncTask<String?, Void, List<Sensor>?>() {
                 node.name = jNode.getString("Name")
                 node.ph = jNode.getString("Ph")
                 node.temperature = jNode.getString("Temperature")
+                node.turbo = jNode.getString("Turbo")
+                node.soil = jNode.getString("Soil")
                 lst.add(node)
             }
             lst
